@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绿智科技 - 设施农业解决方案</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #a5d6a7;
+        }
+
+        /* 主内容 */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('agriculture-bg.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* 服务部分 */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: #2e7d32;
+            margin-bottom: 2rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-item {
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">绿智科技</div>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>智能设施农业解决方案</h1>
+            <p>利用先进技术提升农业生产效率，提供可持续发展的现代农业服务</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>我们的服务</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <h3>智能温室系统</h3>
+                <p>精准控制温度、湿度、光照，优化作物生长环境</p>
+            </div>
+            <div class="service-item">
+                <h3>农业物联网</h3>
+                <p>实时监测和数据分析，提升农业管理效率</p>
+            </div>
+            <div class="service-item">
+                <h3>技术咨询服务</h3>
+                <p>为设施农业项目提供专业规划和技术支持</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>联系我们：info@greenwise.com | 电话：400-123-4567</p>
+        <p>地址：中国农业科技园区A座</p>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 头部导航在滚动时添加阴影
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
